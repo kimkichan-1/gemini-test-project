@@ -139,19 +139,18 @@ class GameStage3 {
         // 텍스처 로더 생성
         const textureLoader = new THREE.TextureLoader();
         // 잔디 텍스처 로드
-        const grassTexture = textureLoader.load('resources/ground.jpeg'); // 잔디 텍스처 파일 경로
+        const grassTexture = textureLoader.load('resources/Map.png'); // 잔디 텍스처 파일 경로
 
         // 텍스처 반복 설정 (타일링)
         grassTexture.wrapS = THREE.RepeatWrapping;
         grassTexture.wrapT = THREE.RepeatWrapping;
-        grassTexture.repeat.set(10, 10); // 텍스처 반복 횟수 (필요에 따라 조정)
+        grassTexture.repeat.set(2, 2); // 텍스처 반복 횟수 (필요에 따라 조정)
 
         // 평면 지오메트리 생성 (크기 200x200)
-        const groundGeometry = new THREE.PlaneGeometry(200, 200, 10, 10);
+        const groundGeometry = new THREE.PlaneGeometry(80, 80, 10, 10);
         // 램버트 재질 생성 (텍스처 적용)
         const groundMaterial = new THREE.MeshLambertMaterial({
             map: grassTexture, // 텍스처 맵 적용
-            color: 0x81c147, // 기본 색상 (텍스처와 혼합, 필요 시 제거 가능)
         });
         // 바닥 메쉬 생성
         this.ground = new THREE.Mesh(groundGeometry, groundMaterial);
