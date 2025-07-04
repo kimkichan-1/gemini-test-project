@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김기찬 Github</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* Vibrant gradient */
+            font-family: 'Press Start 2P', cursive; /* Blocky font */
+            overflow: hidden; /* Hide overflow for animations */
+            perspective: 1000px; /* For 3D effect */
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+        }
+
+        .block-text span {
+            display: inline-block;
+            font-size: 3em; /* Adjust font size for blocks */
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5); /* Darker background for blocks */
+            border: 2px solid #ffffff;
+            border-radius: 5px; /* Sharper corners for blocks */
+            padding: 10px 15px;
+            margin: 5px;
+            box-shadow: 
+                5px 5px 0px rgba(0, 0, 0, 0.5), /* Main shadow */
+                10px 10px 0px rgba(0, 0, 0, 0.3), /* Deeper shadow */
+                15px 15px 0px rgba(0, 0, 0, 0.1); /* Even deeper shadow for 3D effect */
+            transform: translateZ(calc(var(--i) * 10px)) rotateX(10deg) rotateY(-10deg); /* More pronounced 3D stacking */
+            animation: block-build 0.8s ease-out forwards; /* New animation */
+            opacity: 0;
+            animation-delay: calc(var(--i) * 0.1s); /* Staggered animation */
+        }
+
+        @keyframes block-build {
+            0% {
+                opacity: 0;
+                transform: translateY(100px) rotateX(90deg) scale(0.1); /* Start from below, rotated, small */
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateY(-20px) rotateX(0deg) scale(1.1); /* Overshoot slightly */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block-text">
+            <span style="--i:1;">김</span>
+            <span style="--i:2;">기</span>
+            <span style="--i:3;">찬</span>
+            <span style="--i:4;">&nbsp;</span>
+            <span style="--i:5;">G</span>
+            <span style="--i:6;">i</span>
+            <span style="--i:7;">t</span>
+            <span style="--i:8;">h</span>
+            <span style="--i:9;">u</span>
+            <span style="--i:10;">b</span>
+            <span style="--i:11;">입</span>
+            <span style="--i:12;">니</span>
+            <span style="--i:13;">다</span>
+            <span style="--i:14;">.</span>
+        </div>
+    </div>
+</body>
+</html>
